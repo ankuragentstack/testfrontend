@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="~/site.css" />
 </head>
 <body>
-    @RenderBody()
+    <nav class="nav">
+        <a href="/" class="nav-brand">TimeApp</a>
+        <div class="nav-links">
+            <a href="/" class="nav-link">Current Time</a>
+            <a href="/timezone" class="nav-link">Time by Timezone</a>
+        </div>
+    </nav>
+    <main>
+        @RenderBody()
+    </main>
 </body>
 </html>
