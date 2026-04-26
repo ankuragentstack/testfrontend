@@ -1,0 +1,34 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Current Time";
+}
+
+<div class="container">
+    <h1>Current Time</h1>
+    <button id="getTimeBtn" onclick="fetchTime()">Get Current Time</button>
+    <div id="timeDisplay" class="time-display"></div>
+</div>
+
+<script>
+    async function fetchTime() {
+        const btn = document.getElementById('getTimeBtn');
+        const display = document.getElementById('timeDisplay');
+
+        btn.disabled = true;
+        btn.textContent = 'Loading...';
+
+        try {
+            const response = await fetch('/api/time');
+            const data = await response.json();
+            display.textContent = data.time;
+            display.classList.add('visible');
+        } catch (err) {
+            display.textContent = 'Error fetching time.';
+            display.classList.add('visible');
+        } finally {
+            btn.disabled = false;
+            btn.textContent = 'Get Current Time';
+        }
+    }
+</script>

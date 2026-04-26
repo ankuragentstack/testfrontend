@@ -1,0 +1,24 @@
+## .NET / ASP.NET Core
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.dbmdl
+*.jfm
+*.pfx
+*.publishsettings
+appsettings.Development.json
+
+## Rider
+.idea/
+
+## VS Code
+.vscode/
+
+## macOS
+.DS_Store
+
+## Logs
+*.log
+logs/
